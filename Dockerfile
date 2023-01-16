@@ -42,7 +42,7 @@ COPY . /home/mfi-amr
 RUN apt-get -qy autoremove
 
 ADD .bashrc /root/.bashrc
-echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 
 # source setup.bash in WORKDIR
 WORKDIR '/home/mfi-amr'
