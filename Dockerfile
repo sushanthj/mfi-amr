@@ -27,12 +27,11 @@ RUN cd /home/dev_ws/ && git clone https://github.com/ros/ros_tutorials.git -b fo
 # RUN cd /home/ && git clone git@github.com:sushanthj/mfi-amr.git
 # WORKDIR /home/mfi-amr
 
-RUN source /opt/ros/foxy/setup.bash && \
-    apt-get install python3-rosdep -y && \
-    rosdep init && \
-    rosdep update && \
-    rosdep install -i --from-path src --rosdistro foxy -y && \
-    apt install python3-colcon-common-extensions -y
+#RUN source /opt/ros/foxy/setup.bash && \
+#RUN apt-get install python3-rosdep -y && \
+#    rosdep install -i --from-path src --rosdistro foxy -y && \
+#    apt install python3-colcon-common-extensions -y && \
+#    colcon build
 
 # copy all contents of current dir (mfi-amr repo files) into docker
 RUN mkdir /home/mfi-amr
@@ -41,7 +40,7 @@ COPY . /home/mfi-amr
 # cleanup
 RUN apt-get -qy autoremove
 
-ADD .bashrc /root/.bashrc
+#ADD .bashrc /root/.bashrc
 RUN echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 
 # source setup.bash in WORKDIR
