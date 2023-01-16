@@ -48,4 +48,4 @@ RUN echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 WORKDIR '/home/mfi-amr'
 RUN source /opt/ros/foxy/setup.bash
 
-ENTRYPOINT["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
