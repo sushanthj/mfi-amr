@@ -23,16 +23,6 @@ RUN pip3 install wandb
 RUN mkdir /home/dev_ws 
 RUN cd /home/dev_ws/ && git clone https://github.com/ros/ros_tutorials.git -b foxy-devel
 
-# clone the main repo
-# RUN cd /home/ && git clone git@github.com:sushanthj/mfi-amr.git
-# WORKDIR /home/mfi-amr
-
-#RUN source /opt/ros/foxy/setup.bash && \
-#RUN apt-get install python3-rosdep -y && \
-#    rosdep install -i --from-path src --rosdistro foxy -y && \
-#    apt install python3-colcon-common-extensions -y && \
-#    colcon build
-
 # copy all contents of current dir (mfi-amr repo files) into docker
 RUN mkdir /home/mfi-amr
 COPY . /home/mfi-amr
